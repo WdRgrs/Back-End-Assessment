@@ -2,9 +2,40 @@
 <html>
   <head>
     <title>Back End Assessment</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body class="container">
-    <button id="complimentButton">Get a compliment</button>
+    <h1>Click the picture or gif when you're ready for a new one!</h1><br><br>
+    <ul>      
+      <li>
+        <span>
+          <button id="complimentButton">Get a compliment</button>
+        </span>
+      </li><br>
+      <li>
+        <span>
+          <button id="fortuneButton">Get a fortune</button>
+        </span>
+      </li>
+    </ul><br><br>
+    <div id="left"><br><br><br>
+    <ul>
+        <li>
+          <span>            
+            <button id="pictureButton">Get a picture</button>
+          </span>
+        </li>
+      </ul>
+    </div><br><br><br><br><br><br>
+    <div id="right">
+      <ul>
+        <li>  
+          <span>            
+            <button id="gifButton">Get a Gif</button>
+          </span>
+        </li>
+      </ul>
+    </div>    
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
@@ -16,5 +47,41 @@
             });
       };
     </script>
+    <script>
+      document.getElementById("fortuneButton").onclick = function () {
+        axios.get("http://localhost:4000/api/fortune/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+    </script>
+
+    
+
+    <script>
+      document.getElementById("pictureButton").onclick = function () {
+        axios
+          .get("http://localhost:4000/api/picture/")
+          .then(function (response) {
+            const data = response.data;
+            return document.getElementById("pictureButton").innerHTML = '<img src="'+data+'" width=auto height=500vh/>'
+            });
+          };
+    </script>
+    
+
+
+    <script>
+      document.getElementById("gifButton").onclick = function () {
+        axios
+          .get("http://localhost:4000/api/gif/")
+          .then(function (response) {
+            const data = response.data;
+            return document.getElementById("gifButton").innerHTML = '<img src="'+data+'" width=auto height=500vh/>'
+            });
+          };
+    </script>
+
   </body>
 </html>
