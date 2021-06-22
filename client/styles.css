@@ -84,6 +84,14 @@ span {
     transition: 0.3s;
 }
 
+#intro {
+    color: black;
+    background: white;
+    font: Arial;
+    font-size: 48px;
+    text-align-last: center;
+}
+
 li:hover span {
     transform: translateX(0.15em);
 }
@@ -109,8 +117,9 @@ li:hover span {
 #fortuneButton:hover {
     transform: rotateZ(-10deg);
 }
-/* 
+
 #test {
-    height: 20%;
-    width: 20%
-} */
+    display: grid;
+    align-self: end;
+    justify-content: center;
+}
