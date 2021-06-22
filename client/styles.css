@@ -41,7 +41,7 @@ li {
     border-left: 0.08em solid;
     position: relative;
     margin-top: 0.8em;
-    cursor: pointer;
+    cursor: crosshair;
 }
 
 li::before,
@@ -68,12 +68,12 @@ li::after {
     filter: brightness(0.6);
 }
 
-li span {
+span {
     position: relative;
     height: 120%;
     top: -10%;
     box-sizing: border-box;
-    border: 0.08em solid;
+    border: 2mm ridge orange;
     background-color: #333;
     display: flex;
     align-items: center;
@@ -88,7 +88,29 @@ li:hover span {
     transform: translateX(0.15em);
 }
 
+#complimentButton {
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 14px;
+    color: rgb(87, 244, 255);
+    background-color: rgb(34, 114, 114);
+}
+#complimentButton:hover {
+    transform: rotateZ(10deg);
+}
+
+
+#fortuneButton {
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 14px;
+    color: rgb(87, 244, 255);
+    background-color: rgb(34, 114, 114);
+}
+
+#fortuneButton:hover {
+    transform: rotateZ(-10deg);
+}
+/* 
 #test {
     height: 20%;
     width: 20%
-}
+} */
